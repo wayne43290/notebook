@@ -1,13 +1,7 @@
 # notebook :kissing:
 * [Readme.md markdown tip](https://github.com/guodongxiaren/README)
-* .vimrc and .screenrc
-```Bash
-git clone https://github.com/wayne43290/vim-screen.git
-```
-* Switch LTE Dongle to modem mode in Linux
-```Bash
-sudo usb_modeswitch -J -v $(lsusb)_prefix -p $(lsusb)_postfix
-```
+* .vimrc and .screenrc: ```git clone https://github.com/wayne43290/vim-screen.git```
+* Switch LTE Dongle to modem mode in Linux: ```sudo usb_modeswitch -J -v $(lsusb)_prefix -p $(lsusb)_postfix```
 * [Cubieboard setting wifi](http://bigbata.com/blog/2014/05/17/cubieboard-begining-on-lubuntu-setup-wifi/)
 
 ## Bash :blush:
@@ -32,7 +26,7 @@ sudo lshw -html > arthurtoday.html	#看硬體規格
 
 ## Remove pagkages :smile:
 ```Bash
-sudo apt-get remove texlive-full	  #在 Ubuntu 下移除某個軟體套件
+sudo apt-get remove texlive-full    #在 Ubuntu 下移除某個軟體套件
 sudo apt-get autoremove	            #移除一併自動安裝相依套件（dependencies）
 sudo apt-get purge texlive-full	    #移除設定檔
 sudo apt-get remove --auto-remove --purge #cleanest
@@ -51,7 +45,7 @@ sudo apt-get purge `dpkg -l | grep ^rc | awk '{ print $2 }'`
 ```Bash
 ebtables -A FORWARD -i eth0 -o eth1 -p ip -j DROP   # to disable two ports communicate directly at bridge level.
 ebtables -F FORWARD		                              # flush the ebtables rules
-#/etc/hostname, /etc/hosts, /etc/resolv.conf        #系統設定檔維護DNS用
+#/etc/hostname, /etc/hosts, /etc/resolv.conf        #系統維護DNS用的設定檔
 ```
 ```Bash
 #persistently saving the iptables rules:
