@@ -1,5 +1,5 @@
 # notebook :kissing:
-* [Readme.md markdown tip](https://github.com/guodongxiaren/README)
+* [Markdown tip](https://github.com/guodongxiaren/README)
 * .vimrc and .screenrc: ```git clone https://github.com/wayne43290/vim-screen.git```
 * Switch LTE Dongle to modem mode in Linux: ```sudo usb_modeswitch -J -v $(lsusb)_prefix -p $(lsusb)_postfix```
 * [Cubieboard setting wifi](http://bigbata.com/blog/2014/05/17/cubieboard-begining-on-lubuntu-setup-wifi/)
