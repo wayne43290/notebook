@@ -1,5 +1,4 @@
 # notebook :kissing:
-A secret notebook
 * [Readme.md markdown tip](https://github.com/guodongxiaren/README)
 * .vimrc and .screenrc
 ```Bash
@@ -37,7 +36,8 @@ sudo apt-get remove texlive-full	  #在 Ubuntu 下移除某個軟體套件
 sudo apt-get autoremove	            #移除一併自動安裝相依套件（dependencies）
 sudo apt-get purge texlive-full	    #移除設定檔
 sudo apt-get remove --auto-remove --purge #cleanest
-
+```
+```Bash
 #對於先前用 autoremove 或 remove 或其它方式移除，但還沒經過 purge 徹底移除的套件，使用 dpkg 指令可以列出清單：
 dpkg -l | grep ^rc	#^rc 代表行首以 rc 標示開頭，這是只有 remove 沒有 purge 的意思
 #要批次移除這些被標為 rc 的套件，可以配合 grep + awk 指令。
@@ -52,7 +52,8 @@ sudo apt-get purge `dpkg -l | grep ^rc | awk '{ print $2 }'`
 ebtables -A FORWARD -i eth0 -o eth1 -p ip -j DROP   # to disable two ports communicate directly at bridge level.
 ebtables -F FORWARD		                              # flush the ebtables rules
 #/etc/hostname, /etc/hosts, /etc/resolv.conf        #系統設定檔維護DNS用
-
+```
+```Bash
 #persistently saving the iptables rules:
 sudo iptables-save > /etc/iptables.rules
 #add "pre-up iptables-restore < /etc/iptables.rules"
