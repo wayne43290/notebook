@@ -1,22 +1,18 @@
 # notebook
 A secret notebook
-
-## [Readme.md markdown tip](https://github.com/guodongxiaren/README)
-
-## .vimrc and .screenrc
+* [Readme.md markdown tip](https://github.com/guodongxiaren/README)
+* .vimrc and .screenrc
 ```Bash
 git clone https://github.com/wayne43290/vim-screen.git
 ```
-
-## Switch LTE Dongle to modem mode in Linux: 
+* Switch LTE Dongle to modem mode in Linux
 ```Bash
-sudo usb_modeswitch -J -v *lsusb_prefix* -p *lsusb_postfix*
+sudo usb_modeswitch -J -v $(lsusb)_prefix -p $(lsusb)_postfix
 ```
+* [Cubieboard setting wifi](http://bigbata.com/blog/2014/05/17/cubieboard-begining-on-lubuntu-setup-wifi/)
 
-## [Cubieboard setting wifi](http://bigbata.com/blog/2014/05/17/cubieboard-begining-on-lubuntu-setup-wifi/)
-
-## Bash
-To print out the value of parameters in Makefile:
+## Bash :blush:
+### To print out the value of parameters in Makefile:
 ```Bash
 make -p/-qp/-p -f /dev/null
 ```
@@ -24,17 +20,14 @@ To print the data base (rules and variable values) that results from reading the
 To print the data base without trying to remake any files, use `make -qp`.  
 To print the data base of predefined rules and variables, use `make -p -f /dev/null`. The data base output contains file name and line number information for recipe and variable definitions, so it can be a useful debugging tool in complex environments.											
 
-
-
-Bash篇:
-du -sh * | sort -h	count size for the folders, and sort by size												
-copy local file to remote computer:		scp $localFile $remoteUserName@remoteIP:$dir/$newFileName											
-copy remote file to local computer:		scp $remoteUserName@remoteIP:$dir/$fileName $dir/$newFileName											
-使用tree來看資料夾結構													
-find . -iname fileName xargs | chmod +x		#可將此目錄底下的所有的fileName都加上"可執行"的權限
-grep -inr target_string /directory			#對檔案做內文搜尋，i忽略大小寫，w完全符合，n顯示該字串於檔案中的位置(行數)，r遞迴找
-tar -zpcvf /tmp/etc.tar.gz /etc > /tmp/log.txt 2>&1 &	#執行tar來壓縮某資料夾，放進背景執行並且把stderr與stdout都放到log.txt檔理頭
+`du -sh * | sort -h`	# count size for the folders, and sort by size												
+`scp $localFile $remoteUserName@remoteIP:$dir/$newFileName` # copy local file to remote computer
+`scp $remoteUserName@remoteIP:$dir/$fileName $dir/$newFileName` # copy remote file to local computer
+```Bash
+grep -inr target_string /directory			# 對檔案做內文搜尋，i忽略大小寫，w完全符合，n顯示該字串於檔案中的位置(行數)，r遞迴找
+tar -zpcvf /tmp/etc.tar.gz /etc > /tmp/log.txt 2>&1 &	# 執行tar來壓縮某資料夾，放進背景執行並且把stderr與stdout都放到log.txt檔理頭
 find /home/pat -iname "*.conf" | less
+```
 ls -al /etc | tee output | tail	#tee將指令結果輸出至螢幕也寫到output，再由tail/less部分顯示
 To make certain service starts on boot: systemctl enable ssh.socket
 移除篇:
