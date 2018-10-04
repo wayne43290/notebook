@@ -53,3 +53,12 @@ sudo iptables-save > /etc/iptables.rules
 #add "pre-up iptables-restore < /etc/iptables.rules"
 #    "post-down iptables-save > /etc/iptables.rules" into /etc/network/interfaces
 ```
+
+Restore Ubuntu 14's network manager:
+```Bash
+sudo nm-connection-editor
+sudo /etc/init.d/networking restart
+vim /etc/NetworkManager/NetworkManager.conf
+managed=false --> managed=true
+sudo killall NetworkManager
+```
