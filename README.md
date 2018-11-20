@@ -62,3 +62,18 @@ vim /etc/NetworkManager/NetworkManager.conf
 managed=false --> managed=true
 sudo killall NetworkManager
 ```
+
+Pi3: enable wifi and eth
+```Bash
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-essid CORAL2.4
+wpa-psk coral2.4
+
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+  address 192.168.4.80
+  netmask 255.255.255.0
+```
