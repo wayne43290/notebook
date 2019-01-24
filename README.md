@@ -65,15 +65,25 @@ sudo killall NetworkManager
 
 Pi3: enable wifi and eth
 ```Bash
-auto wlan0
-allow-hotplug wlan0
-iface wlan0 inet dhcp
-wpa-essid CORAL2.4
-wpa-psk coral2.4
+sudo systemctl status dhcpcd.service    # To see the dhcp_client daemon status
+# Do not type anything in /etc/network/interface
+# To assign a static IP to a interface:
+$ sudo vim /etc/dhcpcd.conf   #Follows the example there. E.g., 
 
-auto eth0
-allow-hotplug eth0
-iface eth0 inet static
-  address 192.168.4.80
-  netmask 255.255.255.0
+interface eth1
+static ip_address=192.168.4.2/24
+profile static_eth1
+static ip_address=192.168.4.2/24
+interface eth1
+fallback static_eth1
+# To connect to certain wifi on boot
+$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+        ssid="howhow"
+        psk="rabbithow"
+}
 ```
