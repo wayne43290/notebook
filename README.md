@@ -89,9 +89,10 @@ network={
 ```
 
 MySQL: Sync for Master & Slave
-Follows: https://blog.toright.com/posts/5062/mysql-replication-%E4%B8%BB%E5%BE%9E%E5%BC%8F%E6%9E%B6%E6%A7%8B%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8.html
-Commands: http://note.drx.tw/2012/12/mysql-syntax.html
 ```Bash
+# Master/Slave settings, plz follows: https://blog.toright.com/posts/5062
+# MySQL Commands: http://note.drx.tw/2012/12/mysql-syntax.html
+
 # login mysql first
-change master to master_host='192.168.10.28', master_user='$user_name', master_password='$pw_for_that_user', maser_log_file='mysql-bin.XX', master_log_pos=XX;
+change master to master_host='$master_node_ip', master_user='$user_name', master_password='$pw_for_that_user', maser_log_file='mysql-bin.XX', master_log_pos=XX;
 ```
