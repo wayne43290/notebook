@@ -1,0 +1,27 @@
+fog05 installing errors:
+fagent may need libssl.1.1:
+git clone https://github.com/openssl/openssl
+git checkout -b ssl.1.1 OpenSSL_1_1_0
+./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)'
+modify file "engines/.../e_afalg.c" from "return syscall(__NR_eventfd, n);" to "return syscall(__NR_eventfd2, n, 0);"
+make
+sudo make install
+sudo ln -s /usr/local/bin/openssl /usr/bin/openssl ##replace original ssl.... dangerous!
+sudo ldconfig
+
+wget http://dist.schmorp.de/libev/libev-4.25.tar.gz
+tar -zxf libev-4.25.tar.gz
+cd libev-4.25
+./configure
+make
+sudo make install
+sudo ldconfig
+
+use sudo -H pip3 to install python-packages..... then user 'fos' would have python3 packages installed by another user. If not, use 'fos' user to install them again which is stupid :")
+
+Cannot find fog05 package error: create symbolic links for fog05 package at the same dir as the python script.
+
+4 errors while executing LXD_plugin...
+sudo lxd daemon # need lxd daemon listening on port 8443
+
+upgrade pip3 cause lots of errors... Do not upgrade it :p
