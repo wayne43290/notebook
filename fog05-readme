@@ -1,11 +1,13 @@
 fog05 installing errors:
 fagent may need libssl.1.1:
 git clone https://github.com/openssl/openssl
+cd openssl
 git checkout -b ssl.1.1 OpenSSL_1_1_0
 ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)'
-modify file "engines/.../e_afalg.c" from "return syscall(__NR_eventfd, n);" to "return syscall(__NR_eventfd2, n, 0);"
+sudo vim "engines/.../e_afalg.c":"return syscall(__NR_eventfd, n);"=>"return syscall(__NR_eventfd2, n, 0);"
 make
 sudo make install
+sudo mv /usr/bin/openssl /usr/bin/openssl_bak
 sudo ln -s /usr/local/bin/openssl /usr/bin/openssl ##replace original ssl.... dangerous!
 sudo ldconfig
 
