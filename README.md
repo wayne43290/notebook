@@ -65,6 +65,18 @@ sudo killall NetworkManager
 
 Pi3: enable wifi and eth
 ```Bash
+# To connect to certain wifi on boot
+$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+        ssid="howhow"
+        psk="rabbithow"
+}
+
+[option 1]
 sudo systemctl status dhcpcd.service    # To see the dhcp_client daemon status
 # Do not type anything in /etc/network/interface
 # To assign a static IP to a interface:
@@ -76,16 +88,12 @@ profile static_eth1
 static ip_address=192.168.4.2/24
 interface eth1
 fallback static_eth1
-# To connect to certain wifi on boot
-$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
 
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-        ssid="howhow"
-        psk="rabbithow"
-}
+[option 2]
+allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
 ```
 
 MySQL: Sync for Master & Slave
