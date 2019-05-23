@@ -20,7 +20,6 @@ grep -inr target_string /directory  #對檔案做內文搜尋，i忽略大小寫
 tar -zpcvf /tmp/etc.tar.gz /etc > /tmp/log.txt 2>&1 &   #執行tar來壓縮某資料夾，放進背景執行並且把stderr與stdout都放到log.txt檔理頭
 find /home/pat -iname "*.conf" | less #BJ4
 ls -al /etc | tee output | tail	    #tee將指令結果輸出至螢幕也寫到output，再由tail/less部分顯示
-systemctl enable ssh.socket         #make service starts on boot
 sudo lshw -html > arthurtoday.html	#看硬體規格
 ```
 
