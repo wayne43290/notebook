@@ -4,6 +4,10 @@
 * Switch LTE Dongle to modem mode in Linux: ```sudo usb_modeswitch -J -v $(lsusb)_prefix -p $(lsusb)_postfix```
 * [Cubieboard setting wifi](http://bigbata.com/blog/2014/05/17/cubieboard-begining-on-lubuntu-setup-wifi/)
 
+## Git :blush:
+Git: client error, server certificate verification failed:
+https://fabianlee.org/2019/01/28/git-client-error-server-certificate-verification-failed/
+
 ## Bash :blush:
 ```Bash
 make -p/-qp/-p -f /dev/null #To print out the value of parameters in Makefile:
