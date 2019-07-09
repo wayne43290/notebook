@@ -25,6 +25,8 @@ tar -zpcvf /tmp/etc.tar.gz /etc > /tmp/log.txt 2>&1 &   #執行tar來壓縮某�
 find /home/pat -iname "*.conf" | less #BJ4
 ls -al /etc | tee output | tail	    #tee將指令結果輸出至螢幕也寫到output，再由tail/less部分顯示
 sudo lshw -html > arthurtoday.html	#看硬體規格
+sudo visudo                             #Open the /etc/sudoers file
+username     ALL=(ALL) NOPASSWD:ALL     #At the end of the /etc/sudoers file add this line. Replace username with your account username 
 ```
 
 ## Remove pagkages :smile:
