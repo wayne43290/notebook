@@ -1,0 +1,12 @@
+# Machine Learning
+https://leetcode.com/explore/learn/card/machine-learning-101/287/what_is_ml/
+
+1. used to do classification/regression/finding relation from DATA
+2. not 100% accurate (To apply neural network to enhance the accuracy)
+3. simple Machine Learning Algor may cause underfitting, while complicate Machine Learning Algor may cause overfitting
+4. DATA, we may not have enough DATA, or just have DATA with noises.
+
+Steps:
+1. grep characteristics from DATA, and also clean the DATA first.
+2. train and test with certain Machine Learning Algor
+3. tune params of the specific Machine Learning Algor
